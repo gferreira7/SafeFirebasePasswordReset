@@ -18,7 +18,7 @@ const FirebaseAppFromApiKey = function() {
       const redirectParams = Object.keys(hash).reduce((s, key) => `${s ? `${s}&` : "?"}${key}=${hash[key]}`, "");
       window.location.href = `https://${firebaseConfig.projectId ?? "__"}.firebaseapp.com/__/auth/action${redirectParams}`;
     }
-  }, [mode]);
+  }, [mode, hash]);
 
   useEffect(() => {
     if (!firebaseConfig.apiKey) {
@@ -36,7 +36,7 @@ const FirebaseAppFromApiKey = function() {
       console.log("Please update the firebaseConfig.ts file.");
       console.log("******************************");
     }
-  }, [firebaseConfig]);
+  }, []);
 
   //If the programmer hasn't set up the Firebase config properly, then we'll make do with
   //what's passed in.
