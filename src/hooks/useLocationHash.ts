@@ -1,31 +1,29 @@
 import { useEffect, useState } from "react";
 
 function useLocationHash() {
-  const getParsedLocationHash = function() {
-    const hash = window.location.hash.substring(1);
-
-    //Parse the location hash into key/val pairs
-    const parsedLocationHash: {[key: string]: string} = {};
-    const params = hash.split(/&|\?/);
-
-    // the filter here prevents a separator at the beginning of the hash string, or two seps together,
-    // causing {"": ""} in the return
-    for (const param of params.filter(param => param.length > 0)) {
-      const eq = param.indexOf("=");
-      const pkey = (eq < 0) ? param : param.slice(0, eq);
-      const pval = (eq < 0) ? "" : param.slice(eq + 1);
-      parsedLocationHash[pkey] = pval;
-    }
-
-    return parsedLocationHash;
+  const getParsedQueryParams = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+  
+    // Log the 'mode' parameter for debugging
+    const mode = urlParams.get('mode');
+    console.log("Mode:", mode); // Should log 'resetPassword' or other modes
+  
+    // Parse the query parameters into key/value pairs
+    const parsedQueryParams: { [key: string]: string } = {};
+    urlParams.forEach((value, key) => {
+      parsedQueryParams[key] = value;
+    });
+  
+    console.log("Parsed Query Params: ", parsedQueryParams);
+    return parsedQueryParams;
   }
 
   //set up the location hash params on load
-  const [locationHash, setLocationHash] = useState(getParsedLocationHash());
+  const [locationHash, setLocationHash] = useState(getParsedQueryParams());
 
   //...and update them every time they change
   useEffect(() => {
-    const handleHashChange = () => setLocationHash(getParsedLocationHash());
+    const handleHashChange = () => setLocationHash(getParsedQueryParams());
 
     window.addEventListener("hashchange", handleHashChange);
     return () => {
