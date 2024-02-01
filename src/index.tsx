@@ -14,10 +14,15 @@ const FirebaseAppFromApiKey = function () {
 
   useEffect(() => {
     //We only support password reset here. Otherwise redirect to the default Firebase /auth/action app.
-    // if (mode !== "resetPassword") {
-    // const redirectParams = Object.keys(hash).reduce((s, key) => `${s ? `${s}&` : "?"}${key}=${hash[key]}`, "");
-    // window.location.href = `https://${firebaseConfig.projectId ?? "__"}.firebaseapp.com/__/auth/action${redirectParams}`;
-    // }
+    if (mode !== "resetPassword") {
+      const redirectParams = Object.keys(hash).reduce(
+        (s, key) => `${s ? `${s}&` : "?"}${key}=${hash[key]}`,
+        ""
+      )
+      window.location.href = `https://${
+        firebaseConfig.projectId ?? "__"
+      }.firebaseapp.com/__/auth/action${redirectParams}`
+    }
   }, [mode, hash])
   console.log(mode, "mode")
 
