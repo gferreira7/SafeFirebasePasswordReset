@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals"
 import { FirebaseAppProvider } from "reactfire"
 import useLocationHash from "./hooks/useLocationHash"
 import firebaseConfig from "./firebaseConfig"
+import './Lang/i18n.js'
 
 const FirebaseAppFromApiKey = function () {
   const hash = useLocationHash()

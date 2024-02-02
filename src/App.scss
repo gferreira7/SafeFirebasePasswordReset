@@ -1,22 +1,23 @@
 body {
-    background-color: #eee;
-
+    background-color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-#root {
-    display: flex;
-    flex-direction: row;
+.App {
+    max-width: 800px;
+    margin: 10px auto 0px auto;
+    padding: 90px;
+    text-align: center;
+    position: relative;
+}
 
-    .App {
-        //width: 100%;
-        max-width: 800px;
-        margin: 10px auto 0px auto;
-        padding: 90px;
-        text-align: center;
-        background-color: white;
-        border: 1px solid #aaa;
-        box-shadow: 0px 0px 10px #ccc;
-
-
-    }
+.background-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }

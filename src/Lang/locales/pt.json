@@ -1,0 +1,17 @@
+{
+  "lang": "pt",
+  "translation": {
+    "Reset Your Password": "Redefinir a sua Palavra-passe",
+    "Thanks for confirming your email address. You can now reset your password below.": "Obrigado por confirmar o seu endereço de email. Agora pode redefinir a sua palavra-passe abaixo.",
+    "New Password": "Nova Palavra-passe",
+    "Please enter at least {{MIN_CHARS}} characters": "Por favor, insira pelo menos {{MIN_CHARS}} caracteres",
+    "Strong password": "Palavra-passe forte",
+    "Confirm Password": "Confirmar Palavra-passe",
+    "Passwords do not match": "As palavras-passe não coincidem",
+    "Password is not secure enough": "A palavra-passe não é suficientemente segura",
+    "Submitting": "A submeter",
+    "Submit": "Submeter",
+    "Your password has been successfully changed": "A sua palavra-passe foi alterada com sucesso",
+    "You can now close this window and log in as usual with your new password.": "Pode agora fechar esta janela e iniciar sessão como habitualmente com a sua nova palavra-passe."
+  }
+}

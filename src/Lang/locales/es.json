@@ -1,0 +1,17 @@
+{
+  "lang": "es",
+  "translation": {
+    "Reset Your Password": "Restablecer su contraseña",
+    "Thanks for confirming your email address. You can now reset your password below.": "Gracias por confirmar su dirección de correo electrónico. Ahora puede restablecer su contraseña a continuación.",
+    "New Password": "Nueva contraseña",
+    "Please enter at least {{MIN_CHARS}} characters": "Por favor, introduzca al menos {{MIN_CHARS}} caracteres",
+    "Strong password": "Contraseña segura",
+    "Confirm Password": "Confirmar contraseña",
+    "Passwords do not match": "Las contraseñas no coinciden",
+    "Password is not secure enough": "La contraseña no es lo suficientemente segura",
+    "Submitting": "Enviando",
+    "Submit": "Enviar",
+    "Your password has been successfully changed": "Su contraseña se ha cambiado correctamente",
+    "You can now close this window and log in as usual with your new password.": "Ahora puede cerrar esta ventana e iniciar sesión como de costumbre con su nueva contraseña."
+  }
+}

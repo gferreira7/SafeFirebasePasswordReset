@@ -1,0 +1,17 @@
+{
+  "lang": "en",
+  "translation": {
+    "Reset Your Password": "Reset Your Password",
+    "Thanks for confirming your email address. You can now reset your password below.": "Thanks for confirming your email address. You can now reset your password below.",
+    "New Password": "New Password",
+    "Please enter at least {{MIN_CHARS}} characters": "Please enter at least {{MIN_CHARS}} characters",
+    "Strong password": "Strong password",
+    "Confirm Password": "Confirm Password",
+    "Passwords do not match": "Passwords do not match",
+    "Password is not secure enough": "Password is not secure enough",
+    "Submitting": "Submitting",
+    "Submit": "Submit",
+    "Your password has been successfully changed": "Your password has been successfully changed",
+    "You can now close this window and log in as usual with your new password.": "You can now close this window and log in as usual with your new password."
+  }
+}

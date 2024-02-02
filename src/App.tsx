@@ -9,6 +9,7 @@ import FatalError from "./modules/fatalError/FatalError"
 import PasswordChange from "./modules/passwordChange/PasswordChange"
 import { SubmissionState } from "./types"
 import PasswordChangeSuccess from "./modules/passwordChangeSuccess/PasswordChangeSuccess"
+import imageSrc from "./assets/logo-no-background-dark.png";
 
 function App() {
   //Are we currently verifying the action code?
@@ -119,6 +120,7 @@ function App() {
   return (
     <AuthProvider sdk={auth}>
       <div className='App'>
+        <img src={imageSrc} alt="Background" className="background-image" />
         <PasswordChange
           submissionState={submissionState}
           submitError={submitError}
