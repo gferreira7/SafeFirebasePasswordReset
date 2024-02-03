@@ -9,7 +9,7 @@ import FatalError from "./modules/fatalError/FatalError"
 import PasswordChange from "./modules/passwordChange/PasswordChange"
 import { SubmissionState } from "./types"
 import PasswordChangeSuccess from "./modules/passwordChangeSuccess/PasswordChangeSuccess"
-import imageSrc from "./assets/logo-no-background-dark.png";
+import imageSrc from "./assets/logo-no-background-dark.png"
 import { ThemeProvider } from "./context/theme-context"
 
 function App() {
@@ -119,16 +119,34 @@ function App() {
   }, [auth, actionCode])
 
   return (
-
     <AuthProvider sdk={auth}>
       <ThemeProvider>
         <div className='App'>
-          <img src={imageSrc} alt="Background" className="background-image" />
-          <PasswordChange
-            submissionState={submissionState}
-            submitError={submitError}
-            submitNewPassword={(password) => submitNewPassword(password)}
-          />
+          {fatalError && <FatalError errorText={fatalError} />}
+          {!fatalError && actionCodeVerificationInProgress && (
+            <VerifyingActionCode />
+          )}
+          {!fatalError &&
+            !actionCodeVerificationInProgress &&
+            submissionState !== SubmissionState.SUCCESSFULLY_SUBMITTED && (
+              <>
+                <img
+                  src={imageSrc}
+                  alt='Background'
+                  className='background-image'
+                />
+                <PasswordChange
+                  submissionState={submissionState}
+                  submitError={submitError}
+                  submitNewPassword={(password) => submitNewPassword(password)}
+                />
+              </>
+            )}
+          {!fatalError &&
+            !actionCodeVerificationInProgress &&
+            submissionState === SubmissionState.SUCCESSFULLY_SUBMITTED && (
+              <PasswordChangeSuccess />
+            )}
         </div>
       </ThemeProvider>
     </AuthProvider>
