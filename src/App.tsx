@@ -10,6 +10,7 @@ import PasswordChange from "./modules/passwordChange/PasswordChange"
 import { SubmissionState } from "./types"
 import PasswordChangeSuccess from "./modules/passwordChangeSuccess/PasswordChangeSuccess"
 import imageSrc from "./assets/logo-no-background-dark.png";
+import { ThemeProvider } from "./context/theme-context"
 
 function App() {
   //Are we currently verifying the action code?
@@ -118,15 +119,18 @@ function App() {
   }, [auth, actionCode])
 
   return (
+
     <AuthProvider sdk={auth}>
-      <div className='App'>
-        <img src={imageSrc} alt="Background" className="background-image" />
-        <PasswordChange
-          submissionState={submissionState}
-          submitError={submitError}
-          submitNewPassword={(password) => submitNewPassword(password)}
-        />
-      </div>
+      <ThemeProvider>
+        <div className='App'>
+          <img src={imageSrc} alt="Background" className="background-image" />
+          <PasswordChange
+            submissionState={submissionState}
+            submitError={submitError}
+            submitNewPassword={(password) => submitNewPassword(password)}
+          />
+        </div>
+      </ThemeProvider>
     </AuthProvider>
   )
 }

@@ -1,5 +1,19 @@
+/* Light mode styles */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --heading-color: #444444;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --heading-color: #dddddd;
+}
+
 body {
-    background-color: #fff;
+    background-color: var(--bg-color);
     margin: 0;
     display: flex;
     align-items: center;
@@ -13,6 +27,7 @@ body {
     padding: 90px;
     text-align: center;
     position: relative;
+    color: var(--text-color);
 }
 
 .background-image {
@@ -20,4 +35,13 @@ body {
     width: 200px;
     height: 200px;
     object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
 }
