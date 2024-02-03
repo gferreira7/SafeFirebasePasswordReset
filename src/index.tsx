@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals"
 import { FirebaseAppProvider } from "reactfire"
 import useLocationHash from "./hooks/useLocationHash"
 import firebaseConfig from "./firebaseConfig"
+import './Lang/i18n.js'
 
 const FirebaseAppFromApiKey = function () {
   const hash = useLocationHash()
@@ -15,14 +16,9 @@ const FirebaseAppFromApiKey = function () {
   useEffect(() => {
     //We only support password reset here. Otherwise redirect to the default Firebase /auth/action app.
     if (mode !== "resetPassword") {
-      const redirectParams = Object.keys(hash).reduce(
-        (s, key) => `${s ? `${s}&` : "?"}${key}=${hash[key]}`,
-        ""
-      )
-      window.location.href = `https://${
-        firebaseConfig.projectId ?? "__"
-      }.firebaseapp.com/__/auth/action${redirectParams}`
-    }
+
+    const redirectParams = Object.keys(hash).reduce((s, key) => `${s ? `${s}&` : "?"}${key}=${hash[key]}`, "");
+    window.location.href = `https://${firebaseConfig.projectId ?? "__"}.firebaseapp.com/__/auth/action${redirectParams}`;}
   }, [mode, hash])
   console.log(mode, "mode")
 

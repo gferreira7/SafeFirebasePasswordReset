@@ -3,7 +3,7 @@ export interface ActionCodeVerificationInfoParams {
 }
 function FatalError(params: ActionCodeVerificationInfoParams) {
     return (<>
-        <h1>{ params.errorText }</h1>
+        <h1>{params.errorText}</h1>
     </>);
 }
 
