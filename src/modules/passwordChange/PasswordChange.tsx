@@ -1,10 +1,9 @@
 // Import necessary libraries and styles
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import zxcvbn from "zxcvbn"
 import { SubmissionState } from "../../types"
 import "./PasswordChange.scss"
 import { useTranslation } from "react-i18next"
-import { useTheme } from "../../context/theme-context"
 
 // Define constants
 const MIN_SCORE = 3
@@ -20,7 +19,6 @@ export interface PasswordChangeParams {
 // PasswordChange component
 function PasswordChange(params: PasswordChangeParams) {
   const { t } = useTranslation()
-  const theme = useTheme()
 
   const [newPassword1, setNewPassword1] = useState("")
   const [newPassword2, setNewPassword2] = useState("")
@@ -45,7 +43,7 @@ function PasswordChange(params: PasswordChangeParams) {
       setPasswordHeadlineError(null)
     }
   }
-
+// eslint-disable-next-line
   useEffect(() => setNewPassword(""), [])
 
   return (
